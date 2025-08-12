@@ -1,3 +1,11 @@
+baseurl: https://example.com/
+languageCode: en-us
+theme: hugo-theme-stack
+title: Kipp´s Notes
+copyright: Marcos Strauss
+
+DefaultContentLanguage: es
+
 module:
     hugoVersion:
         extended: true
@@ -11,8 +19,8 @@ params:
     favicon:
 
     footer:
-        since:
-        customText:
+        since: 2025
+        customText: By Marcos Strauss
 
     dateFormat:
         published: Jan 02, 2006
@@ -20,8 +28,8 @@ params:
 
     sidebar:
         compact: false
-        emoji:
-        subtitle:
+        emoji: 🦆
+        subtitle: "Holaa, soy estudiate de la carrera de Ingenieria Electronica en ITBA. Aca guardo notas de la facultad y alguna otra cosa que crea ineresante."
         avatar:
             enabled: true
             local: true
@@ -91,7 +99,7 @@ params:
             region:
             path:
             lang:
-
+        
         giscus:
             repo:
             repoID:
@@ -118,7 +126,11 @@ params:
             id:
 
     widgets:
-        homepage: []
+        homepage: 
+            - type: search
+            - type: tag-cloud
+              params:
+                  limit: 10
         page: []
 
     opengraph:
@@ -147,3 +159,60 @@ params:
             enabled: true
         content:
             enabled: true
+
+menu:
+    main: []
+
+    social:
+        - identifier: github
+          name: GitHub
+          url: https://github.com/YoungKippur
+          params:
+              icon: brand-github
+
+        - identifier: linkedin
+          name: LinkedIn
+          url: linkedin.com/in/marcos-strauss-91284b251
+          params:
+              icon: brand-linkedin
+
+related:
+    includeNewer: true
+    threshold: 60
+    toLower: false
+    indices:
+        - name: tags
+          weight: 100
+
+        - name: categories
+          weight: 200
+
+markup:
+    goldmark:
+        extensions:
+            passthrough:
+                enable: true
+                delimiters:
+                    block:
+                        - - \[
+                          - \]
+                        - - $$
+                          - $$
+                    inline:
+                        - - \(
+                          - \)
+        renderer:
+            ## Set to true if you have HTML content inside Markdown
+            unsafe: true
+    tableOfContents:
+        endLevel: 4
+        ordered: true
+        startLevel: 2
+    highlight:
+        noClasses: false
+        codeFences: true
+        guessSyntax: true
+        lineNoStart: 1
+        lineNos: true
+        lineNumbersInTable: true
+        tabWidth: 4
