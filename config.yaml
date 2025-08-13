@@ -161,7 +161,10 @@ params:
             enabled: true
 
 menu:
-    main: []
+    main: 
+        - name: Home
+          url: /
+          weight: 1
 
     social:
         - identifier: github
@@ -172,7 +175,7 @@ menu:
 
         - identifier: linkedin
           name: LinkedIn
-          url: linkedin.com/in/marcos-strauss-91284b251
+          url: https://www.linkedin.com/in/marcos-strauss-91284b251/
           params:
               icon: brand-linkedin
 
