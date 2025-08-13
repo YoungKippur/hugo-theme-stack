@@ -164,7 +164,9 @@ menu:
     main: 
         - name: Home
           url: /
-          weight: 1
+          weight: -100
+          params:
+              icon: home
 
     social:
         - identifier: github
